@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --myrido-orange: #FF5A00;
+    --myrido-orange-cta: #E65100;
+    --myrido-orange-hover: #CC4700;
+    --myrido-ink: #111827;
+    --myrido-muted: #4B5563;
+    --myrido-bg: #FFFFFF;
+  }
+
+  html,
+  body,
+  #root {
+    background-color: #FFFFFF;
+    color: #111827;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+  }
+
+  html.dark,
+  html.dark body,
+  html.dark #root {
+    background-color: #111318;
+    color: #F3F4F6;
+  }
+
+  ::placeholder {
+    color: #9CA3AF;
+    opacity: 1;
+  }
+}
+
+/* Numbers, amounts and codes use the main font with aligned (tabular) digits — easier to read than monospace.
+   Kept outside @layer so it wins over Tailwind's .font-mono utility. */
+.font-mono,
+.tabular-nums {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Horizontal tab rows scroll by swipe/trackpad without showing a scrollbar */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
